@@ -1,47 +1,52 @@
-const App = () => (
-  <div className="categories-container">
+const App = () => {
+  const categories = [
+    {
+      id: 1,
+      title: 'Hats',
+      subtitle: '',
+    },
+    {
+      id: 1,
+      title: 'Jackets',
+      subtitle: '',
+    },
+    {
+      id: 1,
+      title: 'Sneakers',
+      subtitle: '',
+    },
+    {
+      id: 1,
+      title: 'Women',
+      subtitle: '',
+    },
+    {
+      id: 1,
+      title: 'Men',
+      subtitle: '',
+    },
+  ];
 
-    <div className="category-container">
-      <img src="img" alt="img" />
-      <div className="category-body-container">
-        <h2>Hats</h2>
-        <p>Shop Now</p>
-      </div>
+  return (
+    <div className="categories-container">
+      {
+        categories.map(({ id, title }) => (
+          <div key={id} className="category-container">
+
+            <div className="background-image">
+              <img src="img" alt="img" />
+              <div className="category-body-container">
+                <h2>{title}</h2>
+                <p>Shop Now</p>
+              </div>
+            </div>
+
+          </div>
+        ))
+      }
+
     </div>
-
-    <div className="category-container">
-      <img src="img" alt="img" />
-      <div className="category-body-container">
-        <h2>Jackets</h2>
-        <p>Shop Now</p>
-      </div>
-    </div>
-
-    <div className="category-container">
-      <img src="img" alt="img" />
-      <div className="category-body-container">
-        <h2>Sneakers</h2>
-        <p>Shop Now</p>
-      </div>
-    </div>
-
-    <div className="category-container">
-      <img src="img" alt="img" />
-      <div className="category-body-container">
-        <h2>Womens</h2>
-        <p>Shop Now</p>
-      </div>
-    </div>
-
-    <div className="category-container">
-      <img src="img" alt="img" />
-      <div className="category-body-container">
-        <h2>Mens</h2>
-        <p>Shop Now</p>
-      </div>
-    </div>
-
-  </div>
-);
+  );
+};
 
 export default App;
