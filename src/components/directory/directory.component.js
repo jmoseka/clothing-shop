@@ -1,10 +1,9 @@
 import React from 'react';
-
-import PropTypes from 'prop-types';
 import CategoryItem from '../category-item/category-item-component';
 
-function Directory({ categories }) {
-  const cat = categories;
+function Directory(props) {
+  const p = props;
+  const cat = p.categories;
   return (
     <div className="directory-container">
       {
@@ -16,13 +15,5 @@ function Directory({ categories }) {
 
   );
 }
-
-Directory.propTypes = {
-  categories: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    imageUrl: PropTypes.string,
-  }).isRequired,
-};
 
 export default Directory;
